@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Item Collection</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        .filter-buttons {
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            aspect-ratio: 1 / 1; /* Creates a square */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .item p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .item a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Collection</h1>
+
+    <div class="filter-buttons">
+        <button onclick="filterItems('all')">All</button>
+        <button onclick="filterItems('books')">Books</button>
+        <button onclick="filterItems('html')">HTML</button>
+        <button onclick="filterItems('js')">JavaScript</button>
+    </div>
+
+    <div class="item-grid" id="itemGrid">
+        </div>
+
+    <script>
+        const itemsData = [
+            {
+                title: "Book Title 1",
+                link: "books/book1.pdf",
+                description: "A brief description of book 1.",
+                tags: ["books"]
+            },
+            {
+                title: "HTML Project A",
+                link: "project_a/index.html",
+                description: "Introduction to HTML concepts.",
+                tags: ["html"]
+            },
+            {
+                title: "JavaScript Basics",
+                link: "project_js_basics/main.js",
+                description: "Fundamental JavaScript examples.",
+                tags: ["js"]
+            },
+            {
+                title: "Another Book",
+                link: "books/another_book.pdf",
+                description: "Sequel to the first book.",
+                tags: ["books"]
+            },
+            {
+                title: "HTML Forms Guide",
+                link: "project_forms/forms.html",
+                description: "Detailed guide on HTML forms.",
+                tags: ["html"]
+            },
+            {
+                title: "Advanced JS",
+                link: "project_advanced_js/script.js",
+                description: "Exploring advanced JavaScript features.",
+                tags: ["js"]
+            },
+            {
+                title: "Book Series Part 3",
+                link: "books/series_part3.pdf",
+                description: "The thrilling conclusion.",
+                tags: ["books"]
+            },
+            {
+                title: "HTML5 Canvas",
+                link: "project_canvas/canvas_demo.html",
+                description: "Interactive examples using HTML5 Canvas.",
+                tags: ["html", "js"]
+            },
+            {
+                title: "JS Framework Intro",
+                link: "project_framework/app.js",
+                description: "A basic introduction to a JS framework.",
+                tags: ["js"]
+            },
+            {
+                title: "Book of Wonders",
+                link: "books/wonders.pdf",
+                description: "A collection of fascinating stories.",
+                tags: ["books"]
+            }
+        ];
+
+        const itemGrid = document.getElementById('itemGrid');
+
+        function displayItems(items) {
+            itemGrid.innerHTML = ''; // Clear previous items
+            items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+                itemDiv.dataset.tags = item.tags.join(' '); // Store tags for filtering
+
+                const titleElement = document.createElement('h3');
+                titleElement.textContent = item.title;
+
+                const linkElement = document.createElement('a');
+                linkElement.href = item.link;
+                linkElement.textContent = item.link.startsWith('books/') ? 'View Book' : 'View Project';
+                if (item.link.startsWith('books/')) {
+                    linkElement.target = '_blank'; // Open PDFs in a new tab
+                }
+
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = item.description;
+
+                itemDiv.appendChild(titleElement);
+                itemDiv.appendChild(descriptionElement);
+                itemDiv.appendChild(linkElement);
+                itemGrid.appendChild(itemDiv);
+            });
+        }
+
+        function filterItems(tag) {
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                if (tag === 'all' || item.dataset.tags.includes(tag)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // Initial display of all items
+        displayItems(itemsData);
+    </script>
+
+</body>
+</html>
