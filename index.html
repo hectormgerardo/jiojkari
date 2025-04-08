@@ -34,24 +34,25 @@
         }
         h1, h2 {
           font-weight: 900;
-          color: #131313;
+          color: antiquewhite;
           size: 2em;
           text-align: center;
         }
+        p {color:antiquewhite;}
         .content-section {
           background-color: antiquewhite;
           padding: 1em;
           margin-bottom: 20px;
           border-radius: 1em;
         }
-        a {
+        a, .item a{
           color: #6295C8;
           color:#F4A261;
           color: #131313;
           text-decoration: none;
           font-weight: bold;
         }
-        a:hover {
+        a:hover, .item a:hover{
           color: #696969;
           text-decoration: none;
         }
@@ -87,13 +88,14 @@
             cursor: pointer;
             background-color: antiquewhite;
             color:#131313;
+            border:none;
+            border-radius: 1em 1em 1em 0em;
         }
         .item-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 1em;
         }
-
         .item {
             border: 0 solid #ccc;
             padding: 1em;
@@ -108,107 +110,96 @@
             border-radius: 1em;
 
         }
-
         .item h3 {
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 0.5em;
         }
-
         .item p {
             font-size: 0.9em;
-            color: #555;
-            margin-bottom: 10px;
+            color: #696969;
+            margin: auto auto 0.8em auto;
         }
-
-        .item a {
-            text-decoration: none;
-            color: blue;
-        }
-
         .hidden {
             display: none !important;
         }
+        button.active{background-color: #6295C8;}
     </style>
 </head>
 <body>
 
-    <h1>My Collection</h1>
+    <h1>Ji’ojkari</h1>
+    <p>By Hector M. Gerardo</p>
 
     <div class="filter-buttons">
-        <button onclick="filterItems('all')">All</button>
-        <button onclick="filterItems('books')">Books</button>
-        <button onclick="filterItems('html')">HTML</button>
-        <button onclick="filterItems('js')">JavaScript</button>
+        <button class="active" onclick="filterItems('all', this)">All</button>
+        <button onclick="filterItems('dictionary', this)">dictionary</button>
+        <button onclick="filterItems('texts', this)">texts</button>
+        <button onclick="filterItems('grammar', this)">grammar</button>
+        <button onclick="filterItems('yaq', this)">Yaqui</button>
+        <button onclick="filterItems('ood', this)">Papago</button>
+
     </div>
 
     <div class="item-grid" id="itemGrid">
         </div>
-
+  <footer>
+    <p>&copy; 2025 @hectormgerardo</p>
+  </footer>
     <script>
         const itemsData = [
             {
-                title: "Book Title 1",
-                link: "books/book1.pdf",
-                description: "A brief description of book 1.",
-                tags: ["books"]
+                title: "Diccionario yaqui 2016",
+                link: "books/dict_yaq_2016.pdf",
+                description: "diccionario Yaqui-Español de bolsillo. 2016",
+                tags: ["dictionary", "yaq"]
             },
             {
-                title: "HTML Project A",
-                link: "project_a/index.html",
-                description: "Introduction to HTML concepts.",
-                tags: ["html"]
+                title: "Diccionario yaqui 2004",
+                link: "books/dict_yaq_2004.pdf",
+                description: "diccionario yaqui-español y textos: obra de preservación lingüística. 2004",
+                tags: ["dictionary", "yaq"]
             },
             {
-                title: "JavaScript Basics",
-                link: "project_js_basics/main.js",
-                description: "Fundamental JavaScript examples.",
-                tags: ["js"]
+                title: "Diccionario espurio yaqui 2023",
+                link: "books/dict_yaq_2023.pdf",
+                description: "digitalización espuria para consulta práctica del diccionario del 2004",
+                tags: ["dictionary", "yaq"]
             },
             {
-                title: "Another Book",
-                link: "books/another_book.pdf",
-                description: "Sequel to the first book.",
-                tags: ["books"]
+                title: "Diccionario o'odham, Tomo 1, 1975",
+                link: "books/dict_ood_vol1_1975.pdf",
+                description: "diccionario tohono o'odham de Madeleine Mathiot, volumen 1",
+                tags: ["dictionary","ood"]
             },
             {
-                title: "HTML Forms Guide",
-                link: "project_forms/forms.html",
-                description: "Detailed guide on HTML forms.",
-                tags: ["html"]
+                title: "Diccionario o'odham, Tomo 2, 1979",
+                link: "books/dict_ood_vol2_1979.pdf",
+                description: "diccionario tohono o'odham de Madeleine Mathiot, volumen 2",
+                tags: ["dictionary","ood"]
             },
             {
-                title: "Advanced JS",
-                link: "project_advanced_js/script.js",
-                description: "Exploring advanced JavaScript features.",
-                tags: ["js"]
+                title: "Diccionario o'odham y gramática, 1969",
+                link: "books/dict_ood_1969.pdf",
+                description: "diccionario tohono o'odham de Saxton 1969, información gramatical anexa",
+                tags: ["dictionary","ood"]
             },
             {
-                title: "Book Series Part 3",
-                link: "books/series_part3.pdf",
-                description: "The thrilling conclusion.",
-                tags: ["books"]
+                title: "Double locative arguments in yaqui external possessive constructions",
+                link: "books/art_yaq_guerrerobelloro_2018.pdf",
+                description: "Guerrero & Belloro. 2018.",
+                tags: ["grammar", "yaq"]
             },
             {
-                title: "HTML5 Canvas",
-                link: "project_canvas/canvas_demo.html",
-                description: "Interactive examples using HTML5 Canvas.",
-                tags: ["html", "js"]
+                title: "Los elementos de la lengua cahita, 1977",
+                link: "books/lionnet_cahita_1977.pdf",
+                description: "Descripción de la lengua cahita yaqui-mayo de Andrés Lionnet",
+                tags: ["grammar", "yaq"]
             },
-            {
-                title: "JS Framework Intro",
-                link: "project_framework/app.js",
-                description: "A basic introduction to a JS framework.",
-                tags: ["js"]
-            },
-            {
-                title: "Book of Wonders",
-                link: "books/wonders.pdf",
-                description: "A collection of fascinating stories.",
-                tags: ["books"]
-            }
+
         ];
 
         const itemGrid = document.getElementById('itemGrid');
+        const filterButtons = document.querySelectorAll('.filter-buttons button');
 
         function displayItems(items) {
             itemGrid.innerHTML = ''; // Clear previous items
@@ -237,7 +228,15 @@
             });
         }
 
-        function filterItems(tag) {
+        function filterItems(tag, clickedButton) {
+            // Remove 'active' class from all buttons
+            filterButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked button
+            clickedButton.classList.add('active');
+
             const items = document.querySelectorAll('.item');
             items.forEach(item => {
                 if (tag === 'all' || item.dataset.tags.includes(tag)) {
@@ -248,7 +247,7 @@
             });
         }
 
-        // Initial display of all items
+        // Initial display of all items and set 'All' button as active
         displayItems(itemsData);
     </script>
 
