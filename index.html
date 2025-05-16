@@ -195,6 +195,12 @@
                 description: "Descripción de la lengua cahita yaqui-mayo de Andrés Lionnet",
                 tags: ["grammar", "yaq"]
             },
+            {
+                title: "Diccionario Visual Grijalbo, 1997",
+                link: "https://drive.google.com/uc?export=download&id=1gjVAQNjZApX9mmq7uw_jiqQXNh5_oPud",
+                description: "Diccionario Español, Inglés, Francés, Alemán",
+                tags: ["dictionary"]
+            },
 
         ];
 
@@ -213,7 +219,7 @@
 
                 const linkElement = document.createElement('a');
                 linkElement.href = item.link;
-                linkElement.textContent = item.link.startsWith('books/') ? 'View Book' : 'View Project';
+                linkElement.textContent = item.link.startsWith('books/') ? 'View Book' : 'View';
                 if (item.link.startsWith('books/')) {
                     linkElement.target = '_blank'; // Open PDFs in a new tab
                 }
