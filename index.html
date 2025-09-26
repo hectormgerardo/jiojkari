@@ -146,63 +146,7 @@
     <p>&copy; 2025 @hectormgerardo</p>
   </footer>
     <script>
-        const itemsData = [
-            {
-                title: "Diccionario yaqui 2016",
-                link: "books/dict_yaq_2016.pdf",
-                description: "diccionario Yaqui-Español de bolsillo. 2016",
-                tags: ["dictionary", "yaq"]
-            },
-            {
-                title: "Diccionario yaqui 2004",
-                link: "books/dict_yaq_2004.pdf",
-                description: "diccionario yaqui-español y textos: obra de preservación lingüística. 2004",
-                tags: ["dictionary", "yaq"]
-            },
-            {
-                title: "Diccionario espurio yaqui 2023",
-                link: "books/dict_yaq_2023.pdf",
-                description: "digitalización espuria para consulta práctica del diccionario del 2004",
-                tags: ["dictionary", "yaq"]
-            },
-            {
-                title: "Diccionario o'odham, Tomo 1, 1975",
-                link: "books/dict_ood_vol1_1975.pdf",
-                description: "diccionario tohono o'odham de Madeleine Mathiot, volumen 1",
-                tags: ["dictionary","ood"]
-            },
-            {
-                title: "Diccionario o'odham, Tomo 2, 1979",
-                link: "books/dict_ood_vol2_1979.pdf",
-                description: "diccionario tohono o'odham de Madeleine Mathiot, volumen 2",
-                tags: ["dictionary","ood"]
-            },
-            {
-                title: "Diccionario o'odham y gramática, 1969",
-                link: "books/dict_ood_1969.pdf",
-                description: "diccionario tohono o'odham de Saxton 1969, información gramatical anexa",
-                tags: ["dictionary","ood"]
-            },
-            {
-                title: "Double locative arguments in yaqui external possessive constructions",
-                link: "books/art_yaq_guerrerobelloro_2018.pdf",
-                description: "Guerrero & Belloro. 2018.",
-                tags: ["grammar", "yaq"]
-            },
-            {
-                title: "Los elementos de la lengua cahita, 1977",
-                link: "books/lionnet_cahita_1977.pdf",
-                description: "Descripción de la lengua cahita yaqui-mayo de Andrés Lionnet",
-                tags: ["grammar", "yaq"]
-            },
-            {
-                title: "Diccionario Visual Grijalbo, 1997",
-                link: "https://drive.google.com/uc?export=download&id=1gjVAQNjZApX9mmq7uw_jiqQXNh5_oPud",
-                description: "Diccionario Español, Inglés, Francés, Alemán",
-                tags: ["dictionary"]
-            },
-
-        ];
+        import itemsData from ./constants.js
 
         const itemGrid = document.getElementById('itemGrid');
         const filterButtons = document.querySelectorAll('.filter-buttons button');
