@@ -1,4 +1,4 @@
-export const itemsData = [
+const itemsData = [
     {
         title: "Diccionario yaqui 2016",
         link: "books/dict_yaq_2016.pdf",

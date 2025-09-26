@@ -137,6 +137,7 @@
         <button onclick="filterItems('grammar', this)">grammar</button>
         <button onclick="filterItems('yaq', this)">Yaqui</button>
         <button onclick="filterItems('ood', this)">Papago</button>
+        <button onclick="filterItems('narrative', this)">narratives</button>
 
     </div>
 
@@ -145,8 +146,8 @@
   <footer>
     <p>&copy; 2025 @hectormgerardo</p>
   </footer>
+    <script src="constants.js"></script>
     <script>
-        import itemsData from ./constants.js
 
         const itemGrid = document.getElementById('itemGrid');
         const filterButtons = document.querySelectorAll('.filter-buttons button');
