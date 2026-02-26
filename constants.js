@@ -79,4 +79,12 @@ const itemsData = [
         isbn: "9786075184548",
         author: ["Manuel Carlos Silva Encinas","Crescencio Buitimea Valenzuela","Melquiades Bejipone Cruz"]
     },
+    {
+        title: "Sonora Yaqui Grammar Structures, 1999",
+        link: "books/dedrick_casad_1999_yaq.pdf",
+        description: "Grammar info",
+        tags: ["yaq","grammar"],
+        isbn: "9780816519811",
+        author: ["John M. Dedrick","Eugene H. Casad"]
+    },
 ];
