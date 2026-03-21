@@ -100,7 +100,7 @@ const itemsData = [
         link: "books/aviles_diles_yaq_2006.pdf",
         description: "Crónica de los yaquis en la Baja California Sur",
         tags: ["yaq","narrative"],
-        isbn: "?",
+        isbn: "9706892079",
         author: ["Miguel Ángel Avilés"]
     },
 ];
