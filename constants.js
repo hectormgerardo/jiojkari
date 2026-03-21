@@ -87,4 +87,20 @@ const itemsData = [
         isbn: "9780816519811",
         author: ["John M. Dedrick","Eugene H. Casad"]
     },
+    {
+        title: "Tribu Yaqui, 1964",
+        link: "books/wikit_tribu_yaq_1964.pdf",
+        description: "Description by Santos García Wiikit",
+        tags: ["yaq","texts"],
+        isbn: "?",
+        author: ["Santos García Wíkit"]
+    },
+    {
+        title: "Diles que acá estamos, 2006",
+        link: "books/aviles_diles_yaq_2006.pdf",
+        description: "Crónica de los yaquis en la Baja California Sur",
+        tags: ["yaq","narrative"],
+        isbn: "?",
+        author: ["Miguel Ángel Avilés"]
+    },
 ];
